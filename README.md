@@ -3,6 +3,7 @@ O MyTube é um projeto inspirado no YouTube, com o propósito de aprendizagem do
 
 Instruções de Instalação:
 Crie uma pasta em sua área de trabalho chamada MyTube. Baixe os arquivos dentro deste projeto e coloque-os dentro da pasta MyTube na sua máquina recriando a estrutura a seguir:
+
 MyTube{
   css{
     style.css
