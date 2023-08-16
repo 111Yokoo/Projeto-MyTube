@@ -1,0 +1,554 @@
+
+/************
+Fonte*/
+@font-face {
+    font-family: youtubeBold;
+    src: url(../midias/fonte/YouTubeSansBold.otf);
+}
+@font-face {
+    font-family: youtubeRegular;
+    src: url(../midias/fonte/YouTubeSansDarkRegular.otf);
+}
+
+/**************
+Global*/
+*{
+    font-family: youtubeRegular;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+html ::-webkit-scrollbar {
+    width: 8px;
+}
+html ::-webkit-scrollbar-thumb {
+    border-radius: 50px;
+    background: #bcbcbc;
+}
+html ::-webkit-scrollbar-track {
+    background: #171717;
+}
+body{
+    display: flex;
+    height: 100vh;
+    background-color: #171717;
+    overflow: hidden;
+    flex-direction: column;
+}
+body, a, button, h1, h2, h3, h4, h5, h6{
+    color: #fff;
+}
+button{
+    border: none;
+    background: none;
+}
+button:hover{
+    cursor: pointer;
+}
+h2, h3, h4{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+hr{
+    border-color: #656565;
+}
+.centralizar-t{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.centralizar-d{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+}
+
+/**************
+Header*/
+header{
+    padding: 0 20px;
+    position: relative;
+    background-color: #171717;
+    flex: 0 0 60px;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 200px 8fr 2fr;
+}
+header button{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+/*************
+logo*/
+.logo{
+    display: flex;
+}
+.row-logo{
+    gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+.logo-text{
+    display: flex;
+}
+.logo h1{
+    margin-top: -5px;
+    margin-left: 2px;
+    letter-spacing: -2px;
+    font-size: 25px;
+}
+.logo button{
+    margin-top: -5px;
+}
+/***********************
+Area Search*/
+.area-search{
+    display: flex;
+}
+#search input{
+    float: left;
+    width: 500px;
+    height: 35px;
+    padding: 10px;
+    color: #fff;
+    background: none;
+    border: 1px solid #656565;
+    border-radius: 50px 0% 0% 50px;
+    font-size: 18px;
+    position: relative;
+}
+.button-search{
+    float: left;
+    width: 60px;
+    height: 35px;
+    border-radius: 0% 50px 50px 0%;
+    margin-right: 10px;
+    background-color: #383838;
+}
+/*************************
+Area Login*/
+.area-login{
+    display: flex;
+    gap: 30px;
+    margin-right: 20px;
+}
+.btn-login{
+    background-image: url(../midias/imgs/sem-usuario.png);
+    background-size: 100% 100%;
+}
+/************POPUP**************/
+.popup{
+    background-color: #383838;
+    width: 300px;
+    border-radius: 15px;
+    position: absolute;
+    right: 100px;
+    z-index: 1;
+}
+.popup h3{
+    margin: 3px 0 0 0;
+}
+.popup h4{
+    margin-bottom: 3px;
+    margin-top: 0px;
+}
+.popup button{
+    width: auto;
+    font-size: 15px;
+    margin-left: 20px;
+    border-radius: 0%;
+}
+.popup button i{
+    margin-right: 15px;
+}
+.aparencia-popup{
+    margin-left: 140px;
+    margin-right: 0px;
+}
+.popup ul{
+    margin-top: 5px;
+    margin-bottom: 8px;
+}
+
+.popup-p1{
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    margin-bottom: 5px;
+}
+#perfil{
+    background-image: url(../midias/imgs/sem-usuario.png);
+    background-size: 100% 100%;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+}
+#info-perfil{
+    margin-left: 15px;
+}
+#info-perfil a{
+    color: rgb(74, 146, 247);
+}
+/*****************
+pop up Aparencia*/
+.aparencia{
+    background-color: #383838;
+    width: 300px;
+    border-radius: 15px;
+    position: absolute;
+    right: 100px;
+    padding-bottom: 10px;
+    z-index: 1;
+}
+.aparencia .menu-aparencia{
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+.text-aparencia p{
+    font-size: 14px;
+    color: #848383;
+    margin: 5px;
+}
+.text-aparencia li {
+    display: block;
+}
+.text-aparencia button{
+    font-size: 16px;
+    width: auto;
+    border-radius: 0%;
+    margin-left: 15px;
+}
+.text-aparencia button i{
+    margin-right: 10px;
+}
+
+/*************
+Nav aberta*/
+nav#nav{
+    padding: 0px 20px 20px 20px;
+    width: 250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+nav#nav button, nav.nav-gener button{
+    padding: 5px;
+    font-size: 17px;
+}
+nav#nav ul{
+    margin: 10px 0px;
+}
+nav#nav ul li, nav.nav-gener ul li{
+    padding: 5px;
+    border-radius: 10px;
+}
+nav#nav .divisor{
+    width: 310px;
+    margin-left: -100px;
+}
+nav#nav ul li button i{
+    margin-right: 20px;
+}
+.mytube-part li button i{
+    color: #ff0000;
+}
+.links-secundarios li{
+    display: inline;
+}
+.links-secundarios li button{
+    font-size: 14px;
+}
+
+/****************
+Nav Fechada*/
+.nav-curt{
+    display: none;
+}
+nav#nav-curt{
+    width: 70px;
+    padding: 5px;
+}
+nav#nav-curt ul li{
+    display: block;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    height: 60px;
+}
+nav#nav-curt ul li i{
+    width: 50px;
+    margin-bottom: 15px;
+}
+
+/*********************
+Main*/
+.main{
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+.main-content {
+    padding: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: block;
+    width: 100%;
+}
+.active{
+    background-color: #656565;
+}
+/***********************
+Nav-generos*/
+
+.nav-gener {
+    width: 2000px;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-top: -20px;
+    background-color: #171717;
+    padding: 15px;
+    position: fixed;
+}
+.nav-gener ul li{
+    margin-left: 10px;
+    display: inline;
+    background-color: #383838;
+}
+
+
+/************************
+Videos*/
+.videos-main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 50px;
+}
+.video{
+    margin-left: 50px;
+    margin-bottom: 120px;
+    width: 350px;
+    height: 200px;
+}
+.video:hover{
+    cursor: pointer;
+}
+.video img{
+    width: 340px;
+    border-radius: 10px;
+}
+
+/****************
+Em alta*/
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -1px;
+    width: 1100px;
+    overflow-x: hidden;
+}
+.title-alta{
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+}
+.title-alta h2{
+    font-size: 35px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.nav-alta{
+    display: flex;
+    gap: 40px;
+    margin-left: 50px;
+    margin-top: 10px;
+}
+.nav-alta li button{
+    font-size: 20px;
+    padding: 10px 35px 10px 35px;
+}
+.active-alta{
+    background-color: #8d8d8d8f;
+    border-bottom: 3px solid #a7a7a7;
+}
+.video-alta{
+    display: flex;
+    gap: 20px;
+    margin-top: 15px;
+    max-width: 900px;
+}
+.video-alta img{
+    width: 250px;
+    border-radius: 10px;
+}
+.video-alta .info-vAlta{
+    margin-top: 15px;
+}
+.video-alta .info-vAlta h1{
+    font-size: 20px;
+}
+.video-alta .info-vAlta p{
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+.video-alta .info-vAlta p span{
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.video-alta img:hover,
+.video-alta h1, 
+.video-alta p{
+    cursor: pointer;
+}
+.alta-rool{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+}
+.alta-rool li img{
+    border-radius: 5px;
+    width: 220px;
+}
+.alta-rool li img:hover, 
+.alta-rool li h1:hover,
+.alta-rool li p:hover{
+    cursor: pointer;
+}
+.shorts-alta{
+    margin-right: 5px;
+    width: 230px;
+}
+.slideshow-container {
+    width: 2000px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.alta-rool {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    transition: transform 0.5s ease-in-out;
+    margin: 20px 0;
+    overflow: hidden;
+}
+.shorts-alta {
+    flex: 0 0 230px;
+    margin-right: 5px;
+    transition: transform 0.5s ease-in-out;
+}
+.slide-btn {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    position: absolute; 
+    top: 50%; /* Alinhar verticalmente no centro */
+    transform: translateY(-50%);
+}
+.slide-buttons {
+    width: 1050px;
+    position: absolute;
+    bottom: 50%; /* Ajuste para controlar a distância do fundo */
+    left: 10px;
+    display: inline;
+    align-items: center;
+}
+.prev-btn {
+    left: 0;
+}
+.next-btn {
+    right: 0;
+}
+.slide-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.fa-chevron-left,
+.fa-chevron-right {
+    pointer-events: none;
+}
+
+ /******************************************/
+        /*Extra small devices (portrait phones, menor que 576px)*/
+        @media (max-width: 575.98px) {
+            .videos-main{
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+            nav#nav{
+                display: none;
+                width: 350px;
+            }
+            .nav-curt{
+                display: block;
+            }
+            #search input{
+                width: 90px;
+                height: 35px;
+            }
+            .button-search{
+                width: 50px;
+                height: 35px;
+            }
+            .button-login, .button-microfone{
+                display: none;
+            }
+          }
+  
+          /*Small devices (landscape phones, 576px e maiores)*/
+          @media (min-width: 576px) and (max-width: 849.9px) {
+            .videos-main{
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+            nav#nav{
+                display: none;
+            }
+            .nav-curt{
+                display: block;
+            }
+            #search input{
+                width: 150px;
+                height: 35px;
+            }
+            .button-search{
+                width: 50px;
+                height: 35px;
+            }
+            .button-login, .button-microfone{
+                display: none;
+            }
+          }
+  
+          /*Medium devices (tablets, 768px e maiores)*/
+          @media (min-width: 850px) and (max-width: 1100px) {
+            .videos-main{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+            nav#nav{
+                display: none;
+            }
+            .nav-curt{
+                display: block;
+            }
+            #search input{
+                width: 300px;
+                height: 35px;
+            }
+            .button-search{
+                width: 50px;
+                height: 35px;
+            }
+          }

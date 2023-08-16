@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyTube</title>
+    <!--imagem da janela-->
+    <link rel="icon" href="midias/imgs/icon-logo.png">
+    <!--CSS-->
+    <link rel="stylesheet" href="css/style.css">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body onresize="nomear()">
+    <header id="header">
+        <section class="logo">
+            <div class="row-logo ">
+                <article>
+                    <button id="btn-header" onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                        <i class="fa-sharp fa-solid fa-bars fa-xl"></i>
+                    </button><!--id btn-header-->
+                </article><!--Barra  abre e fecha navegação-->
+                <article>
+                    <a  href="inicio.html">
+                        <div class="logo-text">
+                            <img height="30px" src="midias/imgs/icon-logo.png" alt="Logo MyTube">
+                            <h1>
+                                MyTube
+                            </h1>
+                        </div><!--Class logo-->
+                    </a><!--index.html-->
+                </article>
+            </div><!--Row-logo-->
+        </section><!--Logo-->
+
+        <section class="area-search centralizar-t">
+            <article id="search">
+                <input type="search" name="input-search" id="input-search" placeholder="Pesquisar">
+                <button type="submit" class="button-search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </article>
+
+            <article>
+                <button onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)" >
+                    <i class="fa-solid fa-microphone"></i>
+                </button>
+            </article>
+        </section><!--Search-->
+        
+        <section class="area-login centralizar-d">
+            <article>
+                <button onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)" ><i class="fa-solid fa-video"></i></button>
+            </article>
+
+            <article>
+                <button onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)" ><i class="fa-regular fa-bell"></i></button>
+            </article>            
+
+            <article>
+                <button id="login" class="btn-login"></button>
+            </article><!--button-->
+
+            <section id="login-popup" class="popup" style="display: none;">
+
+                <section id="popup-p1" class="popup-p1">
+                    <article id="perfil" class="centralizar-t">
+                    </article><!--Perfil-->
+                    <article id="info-perfil">
+                        <h3 id="user"></h3>
+                        <h4 id="user-email"></h4>
+                        <a href="#">Gerenciar sua Conta do Google</a>
+                    </article>
+                    
+                </section>
+                <hr>
+                <section id="popup-p2" class="popup-p2">
+                    <ul>
+                        <li onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                            <button>
+                                <i class="fa-solid fa-user"></i>
+                                Seu canal
+                            </button>
+                        </li>
+                        <li onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                            <button> 
+                            <i class="fa-solid fa-microphone-lines"></i>
+                            MyTube Studio
+                            </button>
+                        </li>
+                        <li onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                            <button>
+                                <i class="fa-solid fa-user-group"></i>
+                                Alternar conta
+                            </button>
+                        </li>
+                        <li id="exit" onclick="deslogar()" onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                            <button>
+                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                Sair
+                            </button>
+                        </li>
+                    </ul>
+                </section>
+                <hr>
+                <section id="popup-p3" class="popup-p3">
+                    <ul>
+                        <li onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                            <button>
+                                <i class="fa-solid fa-dollar-sign"></i>
+                                Compras e assinaturas
+                            </button>
+                        </li>
+                        <li onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                            <button>
+                                <i class="fa-solid fa-user-shield"></i>
+                                Seus dados no MyTube
+                            </button>
+                        </li>
+                    </ul>
+                </section>
+                <hr>
+                <section id="popup-p4" class="popup-p4">
+                    <ul>
+                        <li onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                            <button onclick="openAparencia()">
+                                <i class="fa-solid fa-moon"></i>
+                                Aparência:
+                                <i class="fa-solid fa-chevron-right aparencia-popup"></i>
+                            </button>
+                        </li>
+
+                        <li onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                            <button>
+                                <i class="fa-solid fa-language"></i>
+                                Idioma: Português
+                            </button>
+                        </li>
+                        <li onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                            <button>
+                                <i class="fa-solid fa-shield-halved"></i>
+                                Modo restrito: Desativado
+                            </button>
+                        </li>
+                        <li onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                            <button>
+                                <i class="fa-solid fa-globe"></i>
+                                Local: Brasil
+                            </button>
+                        </li>
+                        <li onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                            <button>
+                                <i class="fa-solid fa-keyboard"></i>
+                                Atalhos de teclado
+                            </button>
+                        </li>
+                    </ul>
+                </section>
+                <hr>
+                <section id="popup-p5" class="popup-p5">
+                    <ul>
+                        <li onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                            <button>
+                                <i class="fa-solid fa-gear"></i>
+                                Configurações
+                            </button>
+                        </li>
+                    </ul>
+                </section>
+                <hr>
+                <section id="popup-p6" class="popup-p6">
+                    <ul>
+                        <li onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                            <button>
+                                <i class="fa-regular fa-circle-question"></i>
+                                Ajuda
+                            </button>
+                        </li>
+                        <li onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                            <button>
+                                <i class="fa-regular fa-comment-dots"></i>
+                                Enviar feedback
+                            </button>
+                        </li>
+                    </ul>
+                </section>
+            </section><!--Pop up-->
+                
+            <section id="aparencia-popup" class="aparencia" style="display: none;">
+                <div class="menu-aparencia centralizar-d">
+                    <button id="exit-aparencia"><i class="fa-solid fa-arrow-left"></i></button>
+                    <h3>Aparência</h3>
+                </div><!--Title-->
+                <hr>
+                <div class="text-aparencia">
+                    <p>Esta configuração será usada apenas neste navegador</p>
+
+                    <ul>
+                        <li  id="dark-mode" onclick="mudarModoEscuro()" onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                            <button id="btn-dark">
+                                <i class="fa-solid fa-check"></i>
+                                Tema escuro
+                            </button>
+                        </li>
+                        <li id="light-mode" onclick="mudarModoClaro()" onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                            <button id="btn-light">
+                                Tema claro
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </section><!--Area login-->
+        
+        
+        
+    </header><!--Header-->
+    
+    <main class="main">  
+        <nav id="nav">
+            <ul>
+                <li id="menu-inicio" onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                    <button>
+                        <i class="fa-solid fa-house"></i>
+                        Início
+                    </button>
+                </li><!--Home-->
+                <li id="menu-shorts" onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                    <button>
+                        <i class="fa-solid fa-video"></i>
+                        Shorts
+                    </button>
+                </li><!--Shorts-->
+                <li id="menu-inscricoes" onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                    <button>
+                        <i class="fa-solid fa-users-rectangle"></i>
+                        Inscrições
+                    </button>
+                </li><!--Inscrições-->
+            </ul>
+            <hr>
+            <ul>
+                <li id="menu-biblioteca" onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                    <button>
+                        <i class="fa-solid fa-rectangle-list"></i>
+                        Biblioteca
+                    </button>
+                </li><!--Biblioteca-->
+                <li id="menu-historico" onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                    <button>
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        Histórico
+                    </button>
+                </li><!--Histórico-->
+                <li id="menu-videos" onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                    <button>
+                        <i class="fa-regular fa-square-caret-right"></i>
+                        Seus Vídeos
+                    </button>
+                </li><!--Seus vídeos-->
+                <li id="menu-tarde" onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                    <button>
+                        <i class="fa-regular fa-clock"></i>
+                        Assistir mais tarde
+                    </button>
+                </li><!--Assistir mais tarde-->
+                <li id="menu-mais" onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                    <button>
+                        <i class="fa-solid fa-chevron-down"></i>
+                        Mostrar mais
+                    </button>
+                </li><!--Mostrar mais-->
+            </ul>
+            <hr class="divisor">
+            <ul>
+                <h2>Inscrições</h2>
+            </ul>
+            <hr class="divisor">
+            <ul>
+                <h2>Explorar</h2>
+                <li id="menu-alta" onclick="openPage(event)" onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                    <button>
+                    <i class="fa-solid fa-fire"></i>
+                    Em alta
+                    </button>
+                </li><!--Em alta-->
+                <li id="menu-shopping" onclick="openPage(event)" onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                    <button>
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        Shopping
+                    </button>
+                </li><!--Shopping-->
+                <li id="menu-musica" onclick="openPage(event)" onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                    <button>
+                        <i class="fa-solid fa-music"></i>
+                        Música
+                    </button>
+                </li><!--Musica-->
+                <li id="menu-filme" onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                    <button>
+                        <i class="fa-solid fa-clapperboard"></i>
+                        Filme
+                    </button>
+                </li><!--Filme-->
+                <li id="menu-vivo" onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                    <button>
+                        <i class="fa-solid fa-tower-broadcast"></i>
+                        Ao vivo
+                    </button>
+                </li><!--Ao vivo-->
+                <li id="menu-jogos" onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                    <button>
+                        <i class="fa-solid fa-gamepad"></i>
+                        Jogos
+                    </button>
+                </li><!--Jogos-->
+                <li id="menu-noticias" onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                    <button>
+                        <i class="fa-solid fa-newspaper"></i>
+                        Notícias
+                    </button>
+                </li><!--Noticias-->
+                <li id="menu-esportes" onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                    <button>
+                        <i class="fa-solid fa-trophy"></i>
+                        Esportes
+                    </button>
+                </li><!--Esportes-->
+                <li id="menu-aprender" onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                    <button>
+                        <i class="fa-solid fa-lightbulb"></i>
+                        Aprender
+                    </button>
+                </li><!--Aprender-->
+            </ul>
+            <hr class="divisor">
+            <ul class="Mytube-part" >
+                <h2>Mais do MyTube</h2>
+                <li onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                    <button>
+                        <i class="fa-brands fa-youtube"></i>
+                        MyTube Premium
+                    </button>
+                </li><!--MyTube Premium-->
+                <li onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                    <button>
+                        <i class="fa-solid fa-microphone-lines"></i>
+                        MyTube Studio
+                    </button>
+                </li><!--MytubeStudio-->
+                <li onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                    <button>
+                        <i class="fa-solid fa-circle-play"></i>
+                        MyTube Music
+                    </button>
+                </li><!--MyTube Music-->
+                <li onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                    <button>
+                        <i class="fa-solid fa-child-reaching"></i>
+                        MyTube Kids
+                    </button>
+                </li><!--MyTube Kids-->
+            </ul>
+            <hr class="divisor">
+            <ul>
+                <li onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                    <button>
+                        <i class="fa-solid fa-gear"></i>
+                        Configurações
+                    </button>
+                </li><!--Configurações-->
+                <li onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                    <button>
+                        <i class="fa-regular fa-flag"></i>
+                        Denúncias
+                    </button>
+                </li><!--Denuncias-->
+                <li onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                    <button>
+                        <i class="fa-solid fa-circle-question"></i>
+                        Ajuda
+                    </button>
+                </li><!--Ajuda-->
+                <li onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                    <button>
+                        <i class="fa-solid fa-comment-dots"></i>
+                        Enviar feedback
+                    </button>
+                </li><!--Feedback-->
+            </ul>
+            <hr class="divisor">
+            <ol class="links-secundarios">
+                <li><button>Sobre</button></li>
+                <li><button>Imprensa</button></li>
+                <li><button>Direitos autorais</button></li>
+                <li><button>Entre em contato</button></li>
+                <li><button>Criadores de conteúdo</button></li>
+                <li><button>Publicidade</button></li>
+                <li><button>Desenvolvedores</button></li>
+            </ol>
+            <br>
+            <ol class="links-secundarios">
+                <li><button>Termos</button></li>
+                <li><button>Privacidade</button></li>
+                <li><button>Política e segurança</button></li>
+                <li><button>Como funciona o MyTube</button></li>
+                <li><button>Testar os novos recursos</button></li>
+            </ol>
+            <h4>&copy; 2023 Google LLC</h4>
+        </nav><!--Navegação-->
+
+        <nav id="nav-curt" style="display: none;">
+            <ul>
+                <li id="menu-inicio-curt" onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                    <button>
+                        <i class="fa-solid fa-house fa-xl"></i>
+                        Início
+                    </button>
+                </li><!--Home-->
+                <li id="menu-shorts-curt" onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                    <button>
+                        <i class="fa-solid fa-video fa-xl"></i>
+                        Shorts
+                    </button>
+                </li><!--Shorts-->
+                <li id="menu-inscricoes-curt" onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                    <button>
+                        <i class="fa-solid fa-users-rectangle fa-xl"></i>
+                        Inscrições
+                    </button>
+                </li><!--Inscrições-->
+                <li id="menu-biblioteca-curt" onmouseover="hoverEvent(this)" onmouseout="hoverEventCont(this)">
+                    <button>
+                        <i class="fa-solid fa-rectangle-list fa-xl"></i>
+                        Biblioteca
+                    </button>
+                </li><!--Biblioteca-->
+            </ul>
+        </nav>
+        
+        <section class="main-content" id="main-content">
+           
+
+        <section class="container">
+            <article class="title-alta">
+                    <img src="midias/imgs/alta-img.png" alt="imagem figurativa para a aba Em alta" style="border-radius: 50%;" width="70px">
+                    <h2><strong>Em alta</strong></h2>
+            </article>
+            <nav>
+                    <ul id="nav-alta" class="nav-alta">
+                        <li class="active-alta"><button><strong>Agora</strong></button></li>
+                        <li><button>Música</button></li>
+                        <li><button>Jogos</button></li>
+                        <li><button>Filmes</button></li>
+                    </ul>
+            </nav>
+        </section><!--Container-->
+        <hr>
+        <section class="container">
+            <ul>
+                <li class="video-alta">
+                    <aside>
+                        <img src="midias/imgs/noticia-alta1.jpg" alt="Notícia 1">
+                    </aside>
+                    <aside class="info-vAlta">
+                        <h1>Robótica no Japão: Onde a Tradição Encontra a Tecnologia Futurista</h1>
+                        <p>
+                            <span>Japão Oficial</span>
+                            <i class="fa-solid fa-circle fa-2xs"></i>
+                            <span>100 mi de visualizações</span>
+                            <i class="fa-solid fa-circle fa-2xs"></i>
+                            <span>há 1 semana</span>
+                        </p>
+                        <p>
+                            Prepare-se para desvendar como o Japão, com sua rica herança cultural, está impulsionando a revolução robótica global. 
+                        </p>
+                    </aside><!--Info Video alta-->
+                </li><!--video alta-->
+                <li class="video-alta">
+                    <aside>
+                        <img src="midias/imgs/noticia-alta2.jpg" alt="Notícia 1">
+                    </aside>
+                    <aside class="info-vAlta">
+                        <h1>Rota do Comércio Japonês: Conectando Culturas e Mercados</h1>
+                        <p>
+                            <span>Japão Oficial</span>
+                            <i class="fa-solid fa-circle fa-2xs"></i>
+                            <span>150 mi de visualizações</span>
+                            <i class="fa-solid fa-circle fa-2xs"></i>
+                            <span>há 5 dias</span>
+                        </p>
+                        <p>
+                            Prepare-se para uma jornada comercial cativante enquanto exploramos as vias comerciais que moldaram a identidade econômica do Japão! 
+                        </p>
+                    </aside><!--Info Video alta-->
+                </li><!--video alta-->
+                <hr>          
+                <h3>Shorts em alta</h3>     
+                <li class="slideshow-container">
+                  <ul class="alta-rool">
+                            <li class="shorts-alta">
+                                <aside class="img-alta-rool">
+                                    <img src="midias/imgs/alta-rool1.jpg" alt="Notícia 1" >
+                                </aside>
+                                <aside class="info-vAlta">
+                                    <h1>Mundo do Trânsito Japonês</h1>
+                                    <p>
+                                        <span>Japão Oficial</span>
+                                    </p>
+                            </li><!--Shorts alta-->
+                            <li class="shorts-alta">
+                                <aside class="img-alta-rool">
+                                    <img src="midias/imgs/alta-rool2.jpg" alt="Notícia 1" >
+                                </aside>
+                                <aside class="info-vAlta">
+                                    <h1>Explorando os Mistérios dos Templos Japoneses</h1>
+                                    <p>
+                                        <span>Japão Oficial</span>
+                                    </p>
+                            </li><!--Shorts alta-->
+                            <li class="shorts-alta">
+                                <aside class="img-alta-rool">
+                                    <img src="midias/imgs/alta-rool3.jpg" alt="Notícia 1" >
+                                </aside>
+                                <aside class="info-vAlta">
+                                    <h1>Conveniência 24 Horas</h1>
+                                    <p>
+                                        <span>Japão Oficial</span>
+                                    </p>
+                            </li><!--Shorts alta-->
+                            <li class="shorts-alta">
+                                <aside class="img-alta-rool">
+                                    <img src="midias/imgs/alta-rool4.jpg" alt="Notícia 1" >
+                                </aside>
+                                <aside class="info-vAlta">
+                                    <h1>Luzes que Dançam</h1>
+                                    <p>
+                                        <span>Japão Oficial</span>
+                                    </p>
+                            </li><!--Shorts alta-->
+                            <li class="shorts-alta">
+                                <aside class="img-alta-rool">
+                                    <img src="midias/imgs/alta-rool5.jpg" alt="Notícia 1" >
+                                </aside>
+                                <aside class="info-vAlta">
+                                    <h1>Serenidade nos Templos Japoneses</h1>
+                                    <p>
+                                        <span>Japão Oficial</span>
+                                    </p>
+                            </li><!--Shorts alta-->
+                            <li class="shorts-alta">
+                                <aside class="img-alta-rool">
+                                    <img src="midias/imgs/alta-rool6.jpg" alt="Notícia 1" >
+                                </aside>
+                                <aside class="info-vAlta">
+                                    <h1>Explorando o Intrincado Sistema de Metrô do Japão</h1>
+                                    <p>
+                                        <span>Japão Oficial</span>
+                                    </p>
+                            </li><!--Shorts alta-->
+                            <li class="shorts-alta">
+                                <aside class="img-alta-rool">
+                                    <img src="midias/imgs/alta-rool7.jpg" alt="Notícia 1" >
+                                </aside>
+                                <aside class="info-vAlta">
+                                    <h1>A Profundidade Espiritual nos Templos do Japão</h1>
+                                    <p>
+                                        <span>Japão Oficial</span>
+                                    </p>
+                            </li><!--Shorts alta-->
+                  </ul>
+                  <div class="slide-buttons">
+                    <div class="slide-btn prev-btn"><i class="fas fa-chevron-left"></i></div><!--button prev-->
+
+                    <div class="slide-btn next-btn"><i class="fas fa-chevron-right"></i></div><!--button next-->
+                  </div>
+                </li>
+                <hr>
+                <li class="video-alta">
+                    <aside>
+                        <img src="midias/imgs/noticia-alta3.jpg" alt="Notícia 1">
+                    </aside>
+                    <aside class="info-vAlta">
+                        <h1>Desvendando a Excelência Econômica: O Modelo Japonês em Foco</h1>
+                        <p>
+                            <span>Japão Oficial</span>
+                            <i class="fa-solid fa-circle fa-2xs"></i>
+                            <span>90 mi de visualizações</span>
+                            <i class="fa-solid fa-circle fa-2xs"></i>
+                            <span>há 3 semana</span>
+                        </p>
+                        <p>
+                            Neste vídeo esclarecedor, mergulharemos na intrigante economia japonesa, revelando os segredos por trás do sucesso e da resiliência desse país icônico.
+                        </p>
+                    </aside><!--Info Video alta-->
+                </li><!--video alta-->
+                <li class="video-alta">
+                    <aside>
+                        <img src="midias/imgs/noticia-alta4.jpg" alt="Notícia 1">
+                    </aside>
+                    <aside class="info-vAlta">
+                        <h1>Metamorfose Urbana: A Fascinante Urbanização do Japão</h1>
+                        <p>
+                            <span>Japão Oficial</span>
+                            <i class="fa-solid fa-circle fa-2xs"></i>
+                            <span>50 mi de visualizações</span>
+                            <i class="fa-solid fa-circle fa-2xs"></i>
+                            <span>há 2 semana</span>
+                        </p>
+                        <p>
+                            Adentre o dinâmico panorama da urbanização japonesa com nosso novo vídeo! 
+                        </p>
+                    </aside><!--Info Video alta-->
+                </li><!--video alta-->
+            </ul>    
+        </section><!--Container-->
+
+        </section><!--Main content-->
+
+
+    </main>
+
+
+</body>
+<script src="js/js.js"></script>
+</html>
