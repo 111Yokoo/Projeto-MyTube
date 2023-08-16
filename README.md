@@ -4,22 +4,25 @@ O MyTube é um projeto inspirado no YouTube, com o propósito de aprendizagem do
 Instruções de Instalação:
 Crie uma pasta em sua área de trabalho chamada MyTube. Baixe os arquivos dentro deste projeto e coloque-os dentro da pasta MyTube na sua máquina recriando a estrutura a seguir:
 
-MyTube
+MyTube:
+
   css{
+  
     style.css,
     styleIndex.css
   }
   
   js{
+  
     js.js
   }
   
   midias{
+  
     fonte{
       YouTubeSansBold.otf,
       YouYubeSansDarkRegular.otf
     }
-    
     imgs{
       alta-img.png,
       alta-rool1.jpg,
@@ -36,10 +39,14 @@ MyTube
       sem-usario.png
     }
   }
+  
   alta.html
+  
   index.html
+  
   inicio.html
   
+  }
 
 Exemplos de Uso:
 Começando pelo index, será pedido um email e uma senha para entrar na página inicio, não há necessidade de utilizar email e senhas válidos. Recomendado utilizar email e senha fictícios.
