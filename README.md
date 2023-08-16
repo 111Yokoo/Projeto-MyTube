@@ -5,10 +5,10 @@ Instruções de Instalação:
 Crie uma pasta em sua área de trabalho chamada MyTube. Baixe os arquivos dentro deste projeto e coloque-os dentro da pasta MyTube na sua máquina recriando a estrutura a seguir:
 
 MyTube
-  css
+  css{
     style.css
     styleIndex.css
-  
+  }
   js{
     js.js
   }
