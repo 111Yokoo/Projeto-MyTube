@@ -6,30 +6,33 @@ Crie uma pasta em sua área de trabalho chamada MyTube. Baixe os arquivos dentro
 
 MyTube
   css{
-    style.css
+    style.css,
     styleIndex.css
   }
+  
   js{
     js.js
   }
+  
   midias{
     fonte{
-      YouTubeSansBold.otf
+      YouTubeSansBold.otf,
       YouYubeSansDarkRegular.otf
     }
+    
     imgs{
-      alta-img.png
-      alta-rool1.jpg
-      alta-rool2.jpg
-      alta-rool3.jpg
-      alta-rool4.jpg
-      alta-rool5.jpg
-      alta-rool6.jpg
-      alta-rool7.jpg
-      noticia-alta1.jpg
-      noticia-alta2.jpg
-      noticia-alta3.jpg
-      noticia-alta4.jpg
+      alta-img.png,
+      alta-rool1.jpg,
+      alta-rool2.jpg,
+      alta-rool3.jpg,
+      alta-rool4.jpg,
+      alta-rool5.jpg,
+      alta-rool6.jpg,
+      alta-rool7.jpg,
+      noticia-alta1.jpg,
+      noticia-alta2.jpg,
+      noticia-alta3.jpg,
+      noticia-alta4.jpg,
       sem-usario.png
     }
   }
